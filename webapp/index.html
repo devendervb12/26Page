@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>Z26DEMO07</title>
+
+		<script id="sap-ui-bootstrap"
+			src="../../resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m, sap.ui.layout"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"Z26DEMO07": ""}'>
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script>
+		   var osf = new sap.ui.layout.form.SimpleForm({
+		   	    title : new sap.ui.core.Title({ text : "Please Enter your Details"}),
+		   	    content : [
+		   	    	new sap.m.Label({ text : "Employee Name"}),
+		   	    	new sap.m.Input(),
+		   	    	new sap.m.Label({ text : "Role"}),
+		   	    	new sap.m.ComboBox({
+		   	    		items : [
+		   	    			     new sap.ui.core.Item({ text : "Developer"}),
+		   	    			     new sap.ui.core.Item({ text : "Manager"})
+		   	    			]
+		   	    	})
+		   	    	]
+		   });
+		   var oPage = new sap.m.Page({
+		   //	headerContent : [ new sap.m.Title({ text : "Employee Registration Form"})],
+		    title : "Employee Registration Form",
+		   	content : osf,
+		   	footer : new sap.m.Bar({ contentRight : [ new sap.m.Button({ text : "Register",
+		   	                                                             icon : "sap-icon://process"	
+		   	})]})
+		   });
+		   
+		 // oPage.placeAt("content");
+		   // sap.m.App --> Parent
+		   var oApp = new sap.m.App({
+		   	  pages : [
+		   	  	    oPage
+		   	  	]
+		   })
+		   
+		   oApp.placeAt("content");
+		   
+		 //  osf.placeAt("content");
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>
